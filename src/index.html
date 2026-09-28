@@ -8,6 +8,29 @@
   <link rel="icon" type="image/x-icon" href="favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script>
+    // Se aplica el tema ANTES de que Angular arranque para evitar el
+    // destello blanco al recargar. Debe ejecutarse de forma sincrona aqui.
+    // La logica replica exactamente ThemeService.readInitialTheme() para que
+    // el html ya llegue con la clase correcta y no haya un salto al hidratar.
+    (function () {
+      try {
+        var stored = localStorage.getItem('kadabra-theme');
+        var dark;
+        if (stored === 'dark' || stored === 'light') {
+          dark = stored === 'dark';
+        } else if (localStorage.getItem('darkMode') === 'true') {
+          // Clave de la version anterior del toggle: manda sobre el sistema.
+          dark = true;
+        } else {
+          dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        }
+        if (dark) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
   <app-root></app-root>

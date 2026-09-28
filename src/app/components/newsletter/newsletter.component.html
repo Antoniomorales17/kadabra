@@ -1,5 +1,5 @@
 <div
-  class="newsletter-container bg-white p-6 rounded shadow-md w-full max-w-4xl mx-auto mt-8"
+  class="newsletter-container bg-white dark:bg-gray-800 p-6 rounded shadow-md w-full max-w-4xl mx-auto mt-8"
 >
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
     <div>
@@ -17,7 +17,7 @@
     <div>
       <form (ngSubmit)="onSubmit()" class="space-y-4">
         <div>
-          <label for="email" class="block text-sm font-medium text-gray-700"
+          <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300"
             >Tu correo electrónico</label
           >
           <input
@@ -26,20 +26,20 @@
             [(ngModel)]="email"
             name="email"
             required
-            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-indigo-500 dark:focus:border-indigo-400 sm:text-sm"
           />
         </div>
         <div>
           <label
             for="preferences"
-            class="block text-sm font-medium text-gray-700"
+            class="block text-sm font-medium text-gray-700 dark:text-gray-300"
             >Gestiona tus preferencias</label
           >
           <select
             id="preferences"
             [(ngModel)]="preferences"
             name="preferences"
-            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-indigo-500 dark:focus:border-indigo-400 sm:text-sm"
           >
             <option value="women">Moda para mujer</option>
             <option value="men">Moda para hombre</option>
@@ -47,7 +47,7 @@
           </select>
         </div>
         <div>
-          <label class="block text-sm font-medium text-gray-700"
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
             >Opciones de contenido</label
           >
           <div class="mt-2 space-y-2">
@@ -86,7 +86,7 @@
         <div>
           <button
             type="submit"
-            class="w-full bg-orange-500 text-white py-2 px-4 rounded-md"
+            class="w-full bg-orange-500 text-gray-900 py-2 px-4 rounded-md"
           >
             <i class="fas fa-envelope mr-2"></i> Suscríbeme
           </button>
@@ -94,7 +94,7 @@
       </form>
       <p class="text-xs mt-4">
         Echa un vistazo a nuestra
-        <a href="#" class="text-indigo-600 hover:text-indigo-900"
+        <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-900 dark:hover:text-indigo-300"
           >política de privacidad</a
         >
         para saber más sobre el procesamiento de tus datos. Puedes darte de

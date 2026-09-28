@@ -1,12 +1,12 @@
-<div class="bg-white p-6 rounded-xl shadow-xl border">
+<div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-xl border">
     <h2 class="text-2xl mb-4 font-bold">Confirmación del Pedido</h2>
   
     <div class="mb-4">
       <h3 class="text-xl font-bold">Datos del Usuario</h3>
-      <p class="text-sm text-gray-500">
+      <p class="text-sm text-gray-500 dark:text-gray-400">
         Nombre: {{ user?.firstName }} {{ user?.lastName }}
       </p>
-      <p class="text-sm text-gray-500">
+      <p class="text-sm text-gray-500 dark:text-gray-400">
         Correo Electrónico: {{ user?.email }}
       </p>
     </div>
@@ -28,7 +28,7 @@
           <span>Envío premium</span>
           <span>3,95 €</span>
         </div>
-        <p class="text-sm text-gray-500">
+        <p class="text-sm text-gray-500 dark:text-gray-400">
           El servicio de envío exprés no está disponible para este pedido.
         </p>
       </div>
@@ -41,7 +41,7 @@
           <span>{{ item.title }} - {{ item.color }}</span>
           <span>{{ '€ ' + item.price }}</span>
         </div>
-        <div class="text-sm text-gray-500">
+        <div class="text-sm text-gray-500 dark:text-gray-400">
           <img
             [src]="item.image"
             alt="{{ item.title }}"
@@ -51,7 +51,7 @@
       </div>
     </div>
   
-    <div class="p-4 bg-gray-100 rounded-lg border border-gray-300 mb-4">
+    <div class="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-gray-600 mb-4">
       <div class="flex justify-between font-bold">
         <span>Envío</span>
         <span>0,00 €</span>
@@ -73,7 +73,7 @@
         />
         <button
           (click)="applyDiscount()"
-          class="bg-orange-500 text-white px-4 py-2 rounded-r"
+          class="bg-orange-500 text-gray-900 px-4 py-2 rounded-r"
         >
           Aplicar
         </button>
@@ -96,7 +96,7 @@
       </button>
       <button
         (click)="nextStep()"
-        class="bg-orange-500 text-white px-4 py-2 rounded"
+        class="bg-orange-500 text-gray-900 px-4 py-2 rounded"
       >
         Confirmar y Pagar
       </button>

@@ -1,4 +1,4 @@
-<div class="bg-white p-6 rounded-xl shadow-xl border">
+<div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-xl border">
     <h2 class="text-2xl mb-4 font-bold">Forma de Pago</h2>
     <form (ngSubmit)="nextStep()">
       <div class="mb-4">
@@ -31,7 +31,7 @@
               required
             />
             <div class="flex items-center">
-              <i class="fab fa-paypal fa-2x mr-2 text-orange-500"></i>
+              <i class="fab fa-paypal fa-2x mr-2 text-orange-700 dark:text-orange-400"></i>
               <span class="font-bold">Pago con PayPal</span>
             </div>
           </div>
@@ -47,10 +47,10 @@
             <div>
               <span class="font-bold">Pago con tarjeta</span>
               <div class="flex gap-2 mt-1">
-                <i class="fab fa-cc-visa fa-2x text-orange-500"></i>
-                <i class="fab fa-cc-mastercard fa-2x text-orange-500"></i>
-                <i class="fab fa-cc-amex fa-2x text-orange-500"></i>
-                <i class="fab fa-cc-discover fa-2x text-orange-500"></i>
+                <i class="fab fa-cc-visa fa-2x text-orange-700 dark:text-orange-400"></i>
+                <i class="fab fa-cc-mastercard fa-2x text-orange-700 dark:text-orange-400"></i>
+                <i class="fab fa-cc-amex fa-2x text-orange-700 dark:text-orange-400"></i>
+                <i class="fab fa-cc-discover fa-2x text-orange-700 dark:text-orange-400"></i>
               </div>
             </div>
           </div>
@@ -84,7 +84,7 @@
             </button>
             <button
               type="submit"
-              class="bg-orange-500 text-white px-4 py-2 rounded"
+              class="bg-orange-500 text-gray-900 px-4 py-2 rounded"
             >
               Siguiente
             </button>

@@ -6,7 +6,7 @@
         class="p-2 pl-10 border rounded w-full"
         (input)="filterByName($event)"
       />
-      <mat-icon class="absolute left-2 top-2 text-gray-500">search</mat-icon>
+      <mat-icon class="absolute left-2 top-2 text-gray-500 dark:text-gray-400">search</mat-icon>
     </div>
   </div>
   
@@ -23,7 +23,7 @@
         (click)="filterByCategory(category)"
         class="px-4 py-2 rounded-lg text-sm font-semibold border category-button"
         [class.bg-orange-500]="selectedCategory === category"
-        [class.text-white]="selectedCategory === category"
+        [class.text-gray-900]="selectedCategory === category"
         [class.bg-white-200]="selectedCategory !== category"
       >
         <mat-icon>{{ categoryIconMap[category] || 'category' }}</mat-icon>
@@ -61,7 +61,7 @@
   >
     <button
       *ngFor="let page of pages(); let i = index"
-      class="px-4 py-2 mx-1 text-sm font-semibold bg-gray-300 rounded-lg"
+      class="px-4 py-2 mx-1 text-sm font-semibold bg-gray-300 dark:bg-gray-700 rounded-lg"
       [class.bg-blue-500]="currentPage() === i + 1"
       (click)="goToPage(i + 1)"
     >

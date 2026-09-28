@@ -1,34 +1,7 @@
 /* Puedes agregar estilos específicos para el resumen del pedido aquí */
 .bg-slate-100 {
     background-color: #f1f5f9;
-  }
-  .p-6 {
-    padding: 1.5rem;
-  }
-  .rounded-xl {
-    border-radius: 0.75rem;
-  }
-  .shadow-xl {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  }
-  .border {
-    border-width: 1px;
-  }
-  .text-2xl {
-    font-size: 1.5rem;
-  }
-  .flex {
-    display: flex;
-  }
-  .flex-col {
-    flex-direction: column;
-  }
-  .gap-4 {
-    gap: 1rem;
-  }
-  .text-lg {
-    font-size: 1.125rem;
-  }
-  .font-bold {
-    font-weight: 700;
+  }/* Puedes agregar estilos específicos para el resumen del pedido aquí */
+.bg-slate-100 {
+    background-color: #f1f5f9;
   }

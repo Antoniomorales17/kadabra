@@ -4,6 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { PrimaryButtonComponent } from '../primary-button/primary-button.component';
 import { CartService } from './../../services/cart.service';
 import { AuthService } from './../../services/auth.service';
+import { ThemeService } from './../../services/theme.service';
 import { CommonModule } from '@angular/common';
 import { HeaderBannerComponent } from '../../components/header-banner/header-banner.component';
 import Swal from 'sweetalert2';
@@ -24,6 +25,7 @@ import Swal from 'sweetalert2';
 export class HeaderComponent {
   CartService = inject(CartService);
   authService = inject(AuthService);
+  themeService = inject(ThemeService);
 
   cartLabel = computed(() => ` (${this.CartService.cart().length})`);
 

@@ -1,5 +1,5 @@
 <app-header-banner></app-header-banner>
-<div class="bg-white-800 px-4 py-1 shadow-md flex justify-between items-center">
+<div class="bg-white px-4 py-1 shadow-md flex justify-between items-center dark:bg-gray-900 dark:shadow-black/40">
   <button class="text-2xl flex items-center space-x-2" routerLink="/">
     <img
       src="/logo.png"
@@ -9,32 +9,45 @@
   </button>
 
   <div class="flex items-center space-x-4 relative">
-    <div *ngIf="authService.isLoggedIn()" class="text-gray-700">
+    <button
+      type="button"
+      (click)="themeService.toggle()"
+      class="theme-toggle"
+      [attr.aria-label]="themeService.isDark() ? 'Activar modo claro' : 'Activar modo oscuro'"
+      [attr.aria-pressed]="themeService.isDark()"
+      [title]="themeService.isDark() ? 'Modo claro' : 'Modo oscuro'"
+    >
+      <mat-icon class="theme-toggle__icon !important">
+        {{ themeService.isDark() ? 'light_mode' : 'dark_mode' }}
+      </mat-icon>
+    </button>
+
+    <div *ngIf="authService.isLoggedIn()" class="text-gray-700 dark:text-gray-200">
       Bienvenido, {{ authService.getCurrentUser() }}
       <button
         (click)="confirmLogout()"
-        class="ml-4 text-red-600 hover:text-red-800"
+        class="ml-4 text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300"
       >
         Cerrar sesión
       </button>
     </div>
     <div *ngIf="!authService.isLoggedIn()" class="group relative">
-      <button class="flex items-center space-x-2">
-        <mat-icon class="text-black !important">person</mat-icon>
+      <button class="flex items-center space-x-2 dark:text-gray-100">
+        <mat-icon class="text-black !important dark:text-gray-100">person</mat-icon>
         <span>Login</span>
       </button>
       <div
-        class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50"
+        class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50 dark:bg-gray-800 dark:border-gray-700"
       >
         <a
           routerLink="/login"
-          class="block px-4 py-2 text-gray-800 hover:bg-orange-500 hover:text-white"
-          >Login</a
+      class="block px-4 py-2 text-gray-800 hover:bg-orange-500 hover:text-gray-900 dark:text-gray-100"
+      >Login</a
         >
         <a
           routerLink="/register"
-          class="block px-4 py-2 text-gray-800 hover:bg-orange-500 hover:text-white"
-          >Registro</a
+      class="block px-4 py-2 text-gray-800 hover:bg-orange-500 hover:text-gray-900 dark:text-gray-100"
+      >Registro</a
         >
       </div>
     </div>
@@ -48,13 +61,13 @@
       </app-primary-button>
       <div
         *ngIf="CartService.cart().length === 0"
-        class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50 p-4"
+        class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50 p-4 dark:bg-gray-800 dark:border-gray-700"
       >
-        <p class="text-gray-800 font-semibold">Tu cesta está vacía</p>
-        <p class="text-gray-600">¿Necesitas inspiración?</p>
+        <p class="text-gray-800 font-semibold dark:text-gray-100">Tu cesta está vacía</p>
+        <p class="text-gray-600 dark:text-gray-400">¿Necesitas inspiración?</p>
         <a
           routerLink="/products"
-          class="block mt-2 text-orange-500 hover:text-orange-600 font-semibold hover:underline"
+          class="block mt-2 text-orange-700 hover:text-orange-800 font-semibold hover:underline dark:text-orange-400"
         >
           Ver novedades
         </a>

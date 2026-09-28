@@ -1,5 +1,7 @@
+/* El fondo (claro/oscuro) lo controla la plantilla con
+   `bg-gray-100 dark:bg-gray-800`. Aqui solo el layout. */
 .benefits-container {
-    background-color: white;
+    padding: 2rem 1rem;
   }
   .benefit-card {
     border: 2px solid #ffa500;

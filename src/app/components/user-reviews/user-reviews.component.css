@@ -4,6 +4,8 @@
     border-radius: 0.5rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   }
+  /* El fondo de cada tarjeta lo controla la plantilla con
+     `bg-white dark:bg-gray-800`. */
   .review {
-    background-color: #fff;
+    border-radius: 0.5rem;
   }

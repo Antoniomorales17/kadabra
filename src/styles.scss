@@ -10,16 +10,18 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   overflow-x: hidden;
+  background-color: theme("colors.white");
+  color: theme("colors.gray.900");
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Modo Claro */
-body {
-  background-color: white;
-  color: black;
-}
-
-/* Modo Oscuro */
-body.dark-mode {
-  background-color: black;
-  color: white;
+/*
+ * El tema se controla con la clase `dark` en <html> (ver ThemeService y el
+ * script anti-flash de index.html). Tailwind genera las variantes `dark:`.
+ * Solo fijamos aqui los colores base de la pagina; cada componente usa sus
+ * propias variantes `dark:` para fondos, bordes y textos.
+ */
+.dark body {
+  background-color: theme("colors.gray.900");
+  color: theme("colors.gray.100");
 }

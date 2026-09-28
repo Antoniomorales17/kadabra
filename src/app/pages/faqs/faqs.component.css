@@ -11,7 +11,10 @@
     font-size: 1.25rem;
     font-weight: 600;
   }
+  /* Solo el layout. El color va en la plantilla con
+     `text-gray-600 dark:text-gray-400`: si se fija aqui, Angular compila
+     `.faq-item[_ngcontent-x] p[_ngcontent-x]` (0,4,1) y ninguna variante
+     `dark:` podria superarlo sin recurrir a `!important`. */
   .faq-item p {
     font-size: 1rem;
-    color: #4a5568;
   }

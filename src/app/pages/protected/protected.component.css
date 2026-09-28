@@ -8,8 +8,9 @@
     background-position: center;
     background-repeat: no-repeat;
   }
+  /* El fondo translucido (claro/oscuro) lo controla la plantilla con
+     `bg-white/90 dark:bg-gray-800/90`. */
   .content-container {
-    background-color: rgba(255, 255, 255, 0.9); 
     padding: 2rem;
     border-radius: 0.5rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);

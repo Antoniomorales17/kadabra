@@ -3,11 +3,11 @@
   }
   .product-card:hover {
     transform: translateY(-5px);
+  }.product-card {
+    transition: transform 0.3s ease-in-out;
   }
-  .truncate {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  .product-card:hover {
+    transform: translateY(-5px);
   }
   @media (max-width: 640px) {
     .product-card {
