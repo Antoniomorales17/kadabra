@@ -1,7 +1,10 @@
 <div
-  class="bg-white shadow-md border rounded-xl p-6 flex flex-col gap-6 max-w-xl mx-auto mt-8 mb-8 "
+  class="bg-white dark:bg-gray-800 shadow-md border rounded-xl p-6 flex flex-col gap-6 max-w-xl mx-auto mt-8 mb-8"
 >
-  <button (click)="goBack()" class="back-button mb-4 flex items-center">
+  <button
+    (click)="goBack()"
+    class="back-button mb-4 flex items-center text-orange-700 dark:text-orange-400"
+  >
     <mat-icon>arrow_back</mat-icon>
     <span class="ml-2">Volver</span>
   </button>
@@ -15,30 +18,44 @@
     ></mat-spinner>
   </div>
   <ng-template #productContent>
-    <div class="mx-auto">
+    <div *ngIf="notFound" class="text-center py-10">
+      <h2 class="text-2xl font-bold">Producto no encontrado</h2>
+      <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+        El producto que buscas no existe o ya no está disponible.
+      </p>
+      <button
+        (click)="goBack()"
+        class="back-button mt-6 flex items-center mx-auto text-orange-700 dark:text-orange-400"
+      >
+        <mat-icon>arrow_back</mat-icon>
+        <span class="ml-2">Volver</span>
+      </button>
+    </div>
+
+    <div *ngIf="!notFound" class="mx-auto">
       <img
         [src]="product?.image"
         class="w-[300px] h-[auto] object-contain"
       />
     </div>
-    <div class="flex flex-col">
+    <div *ngIf="!notFound" class="flex flex-col">
       <h2 class="text-2xl font-bold">{{ product?.title }}</h2>
       <p class="text-lg font-semibold">{{ '$' + product?.price }}</p>
 
-      <p class="text-sm text-gray-500 mt-4">{{ product?.description }}</p>
+      <p class="text-sm text-gray-500 dark:text-gray-400 mt-4">{{ product?.description }}</p>
 
       <div class="mt-4">
-        <p class="text-md font-bold">
+        <p class="text-base font-bold">
           Rating: {{ product?.rating?.rate }} / 5
         </p>
-        <p class="text-sm text-gray-500">
+        <p class="text-sm text-gray-500 dark:text-gray-400">
           Basado en {{ product?.rating?.count }} reviews
         </p>
 
         <!-- Botón para añadir al carrito -->
         <app-primary-button
           label="Añadir a la cesta"
-          class="mt-2 w-full text-lg font-bold py-3  hover:text-white transition-colors duration-300"
+          class="mt-2 w-full text-lg font-bold py-3 hover:text-white transition-colors duration-300"
           (btnClicked)="addToCart()"
         />
       </div>
@@ -46,7 +63,7 @@
   </ng-template>
 
   <!-- Productos relacionados -->
-  <div *ngIf="relatedProducts.length > 0" class="related-products mt-8">
+  <div *ngIf="!notFound && relatedProducts.length > 0" class="related-products mt-8">
     <h3 class="text-xl font-bold mb-4">Productos relacionados</h3>
     <div class="grid grid-cols-2 gap-4">
       <app-product-card

@@ -30,6 +30,7 @@ export class ProductDetailComponent implements OnInit {
   product: Product | undefined;
   relatedProducts: Product[] = [];
   loading = true;
+  notFound = false;
 
   // Inyecta el servicio del carrito
   CartService = inject(CartService);
@@ -51,19 +52,25 @@ export class ProductDetailComponent implements OnInit {
 
   loadProductDetails(productId: number): void {
     this.loading = true;
+    this.notFound = false;
     this.productsService
       .getProductDetails(productId)
       .pipe(
         catchError((error) => {
           console.error('Error al cargar el producto:', error);
           this.loading = false;
+          this.notFound = true;
           return of(undefined);
         })
       )
       .subscribe((product) => {
         this.product = product;
         this.loading = false;
-        if (product && product.category) {
+        if (!product) {
+          this.notFound = true;
+          return;
+        }
+        if (product.category) {
           this.loadRelatedProducts(product.category);
         }
       });

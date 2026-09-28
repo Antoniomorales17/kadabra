@@ -1,87 +1,17 @@
+/* Solo el layout. El color vive en la plantilla con
+   `text-orange-700 dark:text-orange-400` para que el modo oscuro tenga su
+   propia variante: orange-500 fijo daba 2.8:1 sobre blanco. */
 .back-button {
-    color: #f97316;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  .spinner-center {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-  }
-  .bg-white {
-    background-color: #ffffff;
-  }
-  .shadow-md {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  .border {
-    border-width: 1px;
-  }
-  .rounded-xl {
-    border-radius: 0.75rem;
-  }
-  .p-6 {
-    padding: 1.5rem;
-  }
-  .flex {
-    display: flex;
-  }
-  .flex-col {
-    flex-direction: column;
-  }
-  .gap-6 {
-    gap: 1.5rem;
-  }
-  .max-w-xl {
-    max-width: 36rem;
-  }
-  .mx-auto {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .mt-8 {
-    margin-top: 2rem;
-  }
-  .mb-8 {
-    margin-bottom: 2rem;
-  }
-  .mb-4 {
-    margin-bottom: 1rem;
-  }
-  .w-full {
-    width: 100%;
-  }
-  .text-lg {
-    font-size: 1.125rem;
-  }
-  .font-bold {
-    font-weight: 700;
-  }
-  .text-2xl {
-    font-size: 1.5rem;
-  }
-  .text-sm {
-    font-size: 0.875rem;
-  }
-  .text-gray-500 {
-    color: #6b7280;
-  }
-  .mt-4 {
-    margin-top: 1rem;
-  }
-  .text-md {
-    font-size: 1rem;
-  }
-  .grid {
-    display: grid;
-  }
-  .grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .gap-4 {
-    gap: 1rem;
-  }
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.spinner-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
